@@ -1,0 +1,32 @@
+<form (ngSubmit)="saveGroupe()">
+  <div>
+    <label for="year">Year :</label>
+    <input
+      id="year"
+      type="text"
+      name="year"
+      [(ngModel)]="groupe.year"
+      placeholder="Year"
+    /></div>
+  <div>
+    <label for="code">Code :</label>
+    <input
+      id="code"
+      type="text"
+      name="code"
+      [(ngModel)]="groupe.code"
+      placeholder="Code"
+    /></div>
+
+
+  <div>
+    <label for="clientSelect">Sélectionner un professeur :</label>
+    <select id="clientSelect" [(ngModel)]="groupe.id_professor" name="id_professor">
+      <option *ngFor="let professor of professors" [value]="professor.id">{{ professor.firstName }}</option>
+    </select>
+  </div>
+
+
+  <button type="submit">Ajoutez la groupe</button>
+
+</form>

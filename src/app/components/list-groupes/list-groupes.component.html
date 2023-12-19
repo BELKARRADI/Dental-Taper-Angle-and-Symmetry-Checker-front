@@ -1,0 +1,39 @@
+<div class="filter-container">
+  <span><strong>Sort By Code</strong></span>
+  <input
+    type="text"
+    [(ngModel)]="filters.keyword"
+    name="keyword"
+    (input)="listGroupe()"
+  />
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <th>Year</th>
+    <th>Professeur</th>
+
+    <th>Actions</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let groupe of groupes">
+    <td>{{groupe.id}}</td>
+    <td>{{groupe.code}}</td>
+    <td>{{groupe.year}}</td>
+    <td>{{groupe.professor?.firstName}}</td>
+
+    <td>
+      <a routerLink="/editgroupe/{{groupe.id}}">Modifier</a>
+
+      <button *ngIf="groupe.id !== undefined" (click)="deleteGroupe(groupe.id)">Supprimer</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+<br/><br/><br/><br/><a routerLink="/addgroupe">Ajouté un groupe</a>
+

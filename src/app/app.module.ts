@@ -12,6 +12,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { AddGroupeComponent } from './components/add-groupe/add-groupe.component';
 import { ListToothComponent } from './components/list-tooth/list-tooth.component';
 import { AddToothComponent } from './components/add-tooth/add-tooth.component';
+import { ListPwComponent } from './components/list-pw/list-pw.component';
+import { AddPwComponent } from './components/add-pw/add-pw.component';
 const  routers : Routes=[
   {path:'groupes', component:ListGroupesComponent},
   {path:'addgroupe',component:AddGroupeComponent},
@@ -20,9 +22,11 @@ const  routers : Routes=[
 
   {path:'tooths', component:ListToothComponent},
   {path:'addtooth',component:AddToothComponent},
-  {path:'edittooth/:id',component:AddToothComponent}
+  {path:'edittooth/:id',component:AddToothComponent},
 
-
+  {path:'pws', component:ListPwComponent},
+  {path:'addpw',component:AddPwComponent},
+  {path:'editpw/:id',component:AddPwComponent}
 ]
 @NgModule({
   declarations: [
@@ -30,7 +34,9 @@ const  routers : Routes=[
     ListGroupesComponent,
     AddGroupeComponent,
     ListToothComponent,
-    AddToothComponent
+    AddToothComponent,
+    ListPwComponent,
+    AddPwComponent
   ],
   imports: [
     BrowserModule,

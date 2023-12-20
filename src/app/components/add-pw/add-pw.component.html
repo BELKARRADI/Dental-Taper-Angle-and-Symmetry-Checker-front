@@ -1,0 +1,40 @@
+<form (ngSubmit)="savePw()">
+  <div>
+    <label for="title">Title :</label>
+    <input
+      id="title"
+      type="text"
+      name="title"
+      [(ngModel)]="pw.title"
+      placeholder="Title"
+    /></div>
+  <div>
+    <label for="objectif">Objectif :</label>
+    <input
+      id="objectif"
+      type="text"
+      name="objectif"
+      [(ngModel)]="pw.objectif"
+      placeholder="Objectif"
+    /></div>
+  <div>
+    <label for="docs">Documents :</label>
+    <input
+      id="docs"
+      type="text"
+      name="docs"
+      [(ngModel)]="pw.docs"
+      placeholder="Documents"
+    /></div>
+
+  <div>
+    <label for="clientSelect">Sélectionner une dent :</label>
+    <select id="clientSelect" [(ngModel)]="pw.id_tooth" name="id_tooth">
+      <option *ngFor="let tooth of tooths" [value]="tooth.id">{{ tooth.name }}</option>
+    </select>
+  </div>
+
+
+  <button type="submit">Ajoutez la pw</button>
+
+</form>

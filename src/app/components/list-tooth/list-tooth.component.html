@@ -1,0 +1,36 @@
+<div class="filter-container">
+  <span><strong>Sort By Code</strong></span>
+  <input
+    type="text"
+    [(ngModel)]="filters.keyword"
+    name="keyword"
+    (input)="listTooth()"
+  />
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+
+    <th>Actions</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tooth of tooths">
+    <td>{{tooth.id}}</td>
+    <td>{{tooth.name}}</td>
+
+
+    <td>
+      <a routerLink="/edittooth/{{tooth.id}}">Modifier</a>
+
+      <button *ngIf="tooth.id !== undefined" (click)="deleteTooth(tooth.id)">Supprimer</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+<br/><br/><br/><br/><a routerLink="/addtooth">Ajouté un tooth</a>
+

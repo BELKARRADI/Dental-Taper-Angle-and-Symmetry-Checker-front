@@ -10,13 +10,17 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes} from '@angular/router';
 import { AddGroupeComponent } from './components/add-groupe/add-groupe.component';
+import { ListToothComponent } from './components/list-tooth/list-tooth.component';
+import { AddToothComponent } from './components/add-tooth/add-tooth.component';
 const  routers : Routes=[
   {path:'groupes', component:ListGroupesComponent},
   {path:'addgroupe',component:AddGroupeComponent},
   {path:'editgroupe/:id',component:AddGroupeComponent},
+  {path:'',redirectTo:'/groupes',pathMatch:'full'},
 
-  {path:'',redirectTo:'/groupes',pathMatch:'full'}
-
+  {path:'tooths', component:ListToothComponent},
+  {path:'addtooth',component:AddToothComponent},
+  {path:'edittooth/:id',component:AddToothComponent}
 
 
 ]
@@ -24,7 +28,9 @@ const  routers : Routes=[
   declarations: [
     AppComponent,
     ListGroupesComponent,
-    AddGroupeComponent
+    AddGroupeComponent,
+    ListToothComponent,
+    AddToothComponent
   ],
   imports: [
     BrowserModule,
